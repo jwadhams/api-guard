@@ -3,7 +3,7 @@ ApiGuard
 
 # History
 
-This package is a fork of [JWadhams/api-guard](https://github.com/JWadhams/api-guard) designed to provide some forward support into Laravel 6 and 7, to help people who want to migrate to Laravel Sanctum.
+This package is a fork of [chrisbjr/api-guard](https://github.com/chrisbjr/api-guard) designed to provide some forward support into Laravel 6 and 7, to help people who want to migrate to Laravel Sanctum.
 
 If you're thinking of downloading it for the first time in the year 2020, please don't.
 
