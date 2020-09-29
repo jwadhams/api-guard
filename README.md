@@ -1,51 +1,46 @@
 ApiGuard
 ========
 
-# This package is no longer maintained
+# History
 
-This package is no longer maintained as Laravel already has a similar feature built-in since Laravel 5.8 and Laravel 6.x. Documentation on Laravel's API authentication can be found [here](https://laravel.com/docs/5.8/api-authentication). Furthermore, since Laravel 7.x, there is a new Laravel package called [Airlock/Sanctum](https://laravel.com/docs/7.x/sanctum) that would better serve API authentication purposes.
+This package is a fork of [JWadhams/api-guard](https://github.com/JWadhams/api-guard) designed to provide some forward support into Laravel 6 and 7, to help people who want to migrate to Laravel Sanctum.
 
+If you're thinking of downloading it for the first time in the year 2020, please don't.
 
-[![Latest Stable Version](https://poser.pugx.org/chrisbjr/api-guard/v/stable)](https://packagist.org/packages/chrisbjr/api-guard) [![Total Downloads](https://poser.pugx.org/chrisbjr/api-guard/downloads)](https://packagist.org/packages/chrisbjr/api-guard)
-
-[![Join the chat at https://gitter.im/chrisbjr/api-guard](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/chrisbjr/api-guard?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Laravel already has a similar feature built-in since Laravel 5.8 and Laravel 6.x. Documentation on Laravel's API authentication can be found [here](https://laravel.com/docs/5.8/api-authentication). Furthermore, since Laravel 7.x, there is a new Laravel package called [Airlock/Sanctum](https://laravel.com/docs/7.x/sanctum) that would better serve API authentication purposes.
 
 A simple way of authenticating your APIs with API keys using Laravel. This package uses the following libraries:
 
 - philsturgeon's [Fractal](https://github.com/thephpleague/fractal)
 - maximebeaudoin's [api-response](https://github.com/ellipsesynergie/api-response)
 
-## Laravel 5.3, 5.4 and 5.5 is finally supported!
+## Support Matrix
 
-**Laravel 5.3.x onwards: `~4.*`
-
-**Laravel 5.1.x to 5.2.x: [`~3.*`](https://github.com/chrisbjr/api-guard/blob/3.1/README.md)
-
-**Laravel 5.1.x: `~2.*`
-
-**Laravel 4.2.x: [`~1.*`](https://github.com/chrisbjr/api-guard/tree/laravel4) (Recently updated version for Laravel 4. Please note that there are namespace changes here)
-
-**Laravel 4.2.x: [`0.*`](https://github.com/chrisbjr/api-guard/tree/v0.7) (The version that most of you are using)
+| Laravel Version  | api-guard Version |
+| ------------- | ------------- |
+| 6.x | `^6.*` |
+| 5.3 and up  | `~4.*` |
+| 5.1.x to 5.2.x  | `~3.*` |
 
 ## Quick start
 
-### Installation for Laravel 5.3 to 5.4
+### Installation 
 
-Run `composer require chrisbjr/api-guard 4.*`
+Run `composer require JWadhams/api-guard`
 
-In your `config/app.php` add `Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider` to the end of the `providers` array
+In your `config/app.php` add `JWadhams\ApiGuard\Providers\ApiGuardServiceProvider` to the end of the `providers` array
 
 ```php
 'providers' => array(
 
     ...
-    Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
+    JWadhams\ApiGuard\Providers\ApiGuardServiceProvider::class,
 ),
 ```
 
 Now publish the migration and configuration files for api-guard:
 
-    $ php artisan vendor:publish --provider="Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider"
+    $ php artisan vendor:publish --provider="JWadhams\ApiGuard\Providers\ApiGuardServiceProvider"
 
 Then run the migration:
 
@@ -70,7 +65,7 @@ To generate an API key that is linked to another object (a "user", for example),
 To specify that a model can have API keys, you can attach the `Apikeyable` trait to the model:
 
 ```php
-use Chrisbjr\ApiGuard\Models\Mixins\Apikeyable;
+use JWadhams\ApiGuard\Models\Mixins\Apikeyable;
 
 class User extends Model
 {
@@ -94,10 +89,10 @@ $user->createApiKey();
 To generate an API key from within your application, you can use the following method in the `ApiKey` model:
 
 ```php
-$apiKey = Chrisbjr\ApiGuard\Models\ApiKey::make()
+$apiKey = JWadhams\ApiGuard\Models\ApiKey::make()
 
 // Attach a model to the API key
-$apiKey = Chrisbjr\ApiGuard\Models\ApiKey::make($model)
+$apiKey = JWadhams\ApiGuard\Models\ApiKey::make($model)
 ```
 
 ## Usage
@@ -181,7 +176,7 @@ class Book extends Model
 You can make a basic controller which will return all books like this:
 
 ```php
-use Chrisbjr\ApiGuard\Http\Controllers\ApiGuardController;
+use JWadhams\ApiGuard\Http\Controllers\ApiGuardController;
 use App\Transformers\BookTransformer;
 use App\Book;
 
@@ -248,7 +243,7 @@ ApiGuard comes with a request class that can handle validation of requests for y
 You can create a `Request` class as you usually do but in order to get a standard JSON response you'll have to extend the `ApiGuardFormRequest` class.
 
 ```php
-use Chrisbjr\ApiGuard\Http\Requests\ApiGuardFormRequest;
+use JWadhams\ApiGuard\Http\Requests\ApiGuardFormRequest;
 
 class BookStoreRequest extends ApiGuardFormRequest
 {
@@ -269,7 +264,7 @@ class BookStoreRequest extends ApiGuardFormRequest
 Now you can use this in your controller as you normally do with Laravel:
 
 ```php
-use Chrisbjr\ApiGuard\Http\Controllers\ApiGuardController;
+use JWadhams\ApiGuard\Http\Controllers\ApiGuardController;
 use App\Transformers\BookTransformer;
 use App\Book;
 

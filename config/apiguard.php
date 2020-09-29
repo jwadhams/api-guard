@@ -15,7 +15,7 @@ return [
 
     'models' => [
 
-        'api_key' => 'Chrisbjr\ApiGuard\Models\ApiKey',
+        'api_key' => 'JWadhams\ApiGuard\Models\ApiKey',
 
     ],
 

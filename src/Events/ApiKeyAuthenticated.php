@@ -1,8 +1,8 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Events;
+namespace JWadhams\ApiGuard\Events;
 
-use Chrisbjr\ApiGuard\Models\ApiKey;
+use JWadhams\ApiGuard\Models\ApiKey;
 use Illuminate\Queue\SerializesModels;
 
 class ApiKeyAuthenticated

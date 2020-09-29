@@ -1,6 +1,7 @@
 {
-    "name": "chrisbjr/api-guard",
-    "description": "A simple way of authenticating your APIs with API keys using Laravel",
+    "name": "jwadhams/api-guard",
+    "abandoned": "laravel/sanctum",
+    "description": "A slightly archaic way of authenticating your APIs with API keys using Laravel",
     "keywords": [
         "api",
         "rest",
@@ -9,11 +10,11 @@
         "api authentication",
         "laravel"
     ],
-    "homepage": "https://github.com/chrisbjr/api-guard",
+    "homepage": "https://github.com/jwadhams/api-guard",
     "authors": [
         {
             "name": "Chris Bautista",
-            "email": "chrisbjr@gmail.com"
+            "email": "JWadhams@gmail.com"
         },
         {
             "name": "Mark Jayson Fuentes",
@@ -31,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Chrisbjr\\ApiGuard\\": "src"
+            "JWadhams\\ApiGuard\\": "src"
         }
     },
     "minimum-stability": "stable"

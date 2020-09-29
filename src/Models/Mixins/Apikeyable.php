@@ -1,8 +1,8 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Models\Mixins;
+namespace JWadhams\ApiGuard\Models\Mixins;
 
-use Chrisbjr\ApiGuard\Models\ApiKey;
+use JWadhams\ApiGuard\Models\ApiKey;
 
 trait Apikeyable
 {
